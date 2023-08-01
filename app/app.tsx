@@ -3,7 +3,7 @@
 import * as React from "react";
 import { DataGrid, GridRowsProp, GridColDef } from "@mui/x-data-grid";
 import i18next from "i18next";
-import { initReactI18next } from "react-i18next";
+import { initReactI18next, useTranslation } from "react-i18next";
 import en from "./en.json";
 
 const resources = {
@@ -19,6 +19,7 @@ i18next.use(initReactI18next).init({
 });
 
 export default function App() {
+  const { t } = useTranslation();
   const rows: GridRowsProp = [
     { id: 1, col1: "Hello", col2: i18next.t("a") },
     { id: 2, col1: "DataGridPro", col2: i18next.t("d", { val: 1 }) },
@@ -26,7 +27,7 @@ export default function App() {
     {
       id: 4,
       col1: "HOGE",
-      col2: i18next.t("e", { val: 3, hoge: i18next.t("a") }),
+      col2: t("e", { val: 3, hoge: t("a") }),
     },
     {
       id: 5,
