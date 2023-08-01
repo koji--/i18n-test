@@ -2,7 +2,7 @@
 
 import * as React from "react";
 import i18next from "i18next";
-import { initReactI18next, useTranslation } from "react-i18next";
+import { initReactI18next } from "react-i18next";
 import en from "./en.json";
 
 const resources = {
@@ -18,8 +18,7 @@ i18next.use(initReactI18next).init({
 });
 
 export default function App() {
-  const { t } = useTranslation();
-  console.log("hoge: ", t("a"));
-  console.log("hoge: ", t("d", { val: t("a") }));
+  console.log("hoge: ", i18next.t("a"));
+  console.log("hoge: ", i18next.t("d", { val: i18next.t("a") }));
   return <div style={{ height: 300, width: "100%" }}></div>;
 }
