@@ -7,7 +7,10 @@
   "plugins": [
     "@typescript-eslint"
   ],
+  "parserOptions": {
+    "project": ["./tsconfig.json"]
+  },
   "rules": {
-    "@typescript-eslint/no-unsafe-assignment": "warn"
+    "@typescript-eslint/no-unsafe-assignment": "error"
   }
 }
